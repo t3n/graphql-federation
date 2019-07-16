@@ -15,5 +15,5 @@ interface EntityResolverInterface extends ResolverInterface
      *
      * @param mixed[] $variables those variables are passed down via the representation array
      */
-    public function __resolveEntity(array $variables): void;
+    public function __resolveEntity(array $variables);
 }
