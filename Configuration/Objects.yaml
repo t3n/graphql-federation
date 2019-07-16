@@ -1,0 +1,26 @@
+t3n\GraphQL\ResolveCacheInterface:
+  factoryObjectName: Neos\Flow\Cache\CacheManager
+  factoryMethodName: getCache
+  arguments:
+    1:
+      value: t3n_GraphQL_Resolve
+
+t3n\GraphQL\ApolloFederation\Resolver\ServiceResolver:
+  properties:
+    'schemaCache':
+      object:
+        factoryObjectName: Neos\Flow\Cache\CacheManager
+        factoryMethodName: getCache
+        arguments:
+          1:
+            value: t3n_GraphQL_Schema
+
+t3n\GraphQL\ApolloFederation\Resolver\QueryResolver:
+  properties:
+    'schemaCache':
+      object:
+        factoryObjectName: Neos\Flow\Cache\CacheManager
+        factoryMethodName: getCache
+        arguments:
+          1:
+            value: t3n_GraphQL_Schema

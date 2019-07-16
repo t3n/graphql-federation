@@ -1,0 +1,31 @@
+{
+    "description": "Apollo Federation spec implementation for t3n.GraphQL",
+    "type": "neos-package",
+    "name": "t3n/graphql-apollofederation",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/flow": "~4.3 || ~5.0",
+        "t3n/graphql-tools": "~1.0.2",
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "t3n/coding-standard": "~1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "t3n\\GraphQL\\ApolloFederation\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "t3n\\GraphQL\\ApolloFederation\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "t3n.GraphQL.ApolloFederation"
+        }
+    }
+}
