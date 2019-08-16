@@ -39,7 +39,7 @@ t3n:
 
 2. Add a new Entity union to your schema:
 
-You need to make each if your entities part of the `_Entity` union. In order to do so add
+You need to make each of your entities part of the `_Entity` union. In order to do so add
 a new schema file to your Endpoint that defines the union:
 
 ```graphql
@@ -58,6 +58,8 @@ t3n:
 ```
 
 3. Add the EntitiesQueryTrait to your query resolver
+
+This step is optional if do not have any entities.
 
 The Federation specification needs a new query `_entities`. Add the trait to all of your QueryResolver:
 
@@ -79,17 +81,25 @@ class QueryResolver implements ResolverInterface
 }
 ```
 
+Also add the `_entities` to your query type:
+
+```graphql
+type Query @extends {
+  _entities(representations: [_Any!]!): [_Entity]!
+}
+```
+
 4. Implement EntityResolverInterface
 
 Once the `_entities` query is called the `Entity` union will be resolved. The Apollo Gateway server will send queries like
 
 ```graphql
 query($representations: [_Any!]!) {
-    _entities(representations: $representations) {
-        ... on User {
-            name
-        }
+  _entities(representations: $representations) {
+    ... on User {
+      name
     }
+  }
 }
 ```
 
