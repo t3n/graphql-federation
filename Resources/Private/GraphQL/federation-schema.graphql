@@ -8,7 +8,7 @@ type _Service {
 }
 
 type Query @extends {
-  #   Add this to your schmea if you implement the entity union
+  #   Add this to your schema if you implement the entity union
   #    _entities(representations: [_Any!]!): [_Entity]!
   _service: _Service!
 }
