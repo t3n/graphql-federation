@@ -7,9 +7,7 @@ type _Service {
   sdl: String
 }
 
-type Query @extends {
-  #   Add this to your schema if you implement the entity union
-  #    _entities(representations: [_Any!]!): [_Entity]!
+extend type Query {
   _service: _Service!
 }
 

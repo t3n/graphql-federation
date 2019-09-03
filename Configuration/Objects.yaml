@@ -14,13 +14,3 @@ t3n\GraphQL\ApolloFederation\Resolver\ServiceResolver:
         arguments:
           1:
             value: t3n_GraphQL_Schema
-
-t3n\GraphQL\ApolloFederation\Resolver\QueryResolver:
-  properties:
-    'schemaCache':
-      object:
-        factoryObjectName: Neos\Flow\Cache\CacheManager
-        factoryMethodName: getCache
-        arguments:
-          1:
-            value: t3n_GraphQL_Schema

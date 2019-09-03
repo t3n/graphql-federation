@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace t3n\GraphQL\ApolloFederation\Resolver;
 
-use t3n\GraphQL\ResolverInterface;
-
-class QueryResolver implements ResolverInterface
+trait ServiceQueryTrait
 {
     public function _service(): bool
     {

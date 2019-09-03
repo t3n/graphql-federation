@@ -34,10 +34,30 @@ t3n:
               resolvers:
                 _Entity: 't3n\GraphQL\ApolloFederation\Resolver\EntityResolver'
                 _Service: 't3n\GraphQL\ApolloFederation\Resolver\ServiceResolver'
-                Query: 't3n\GraphQL\ApolloFederation\Resolver\QueryResolver'
 ```
 
-2. Add a new Entity union to your schema:
+2. Add the `ServiceQueryTrait`  to your Query-Resolver
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Some\Vendor\Namespace\Resolver;
+
+use t3n\GraphQL\ApolloFederation\Resolver\ServiceQueryTrait;
+use t3n\GraphQL\ResolverInterface;
+
+class QueryResolver implements ResolverInterface
+{
+    use ServiceQueryTrait;
+
+    // [...]
+}
+```
+
+
+3. Add a new Entity union to your schema:
 
 You need to make each of your entities part of the `_Entity` union. In order to do so add
 a new schema file to your Endpoint that defines the union:
@@ -57,7 +77,7 @@ t3n:
             typeDefs: 'resource://Your.Package/Private/GraphQL/federation.graphql'
 ```
 
-3. Add the EntitiesQueryTrait to your query resolver
+4. Add the EntitiesQueryTrait to your query resolver
 
 This step is optional if do not have any entities.
 
@@ -89,7 +109,7 @@ type Query @extends {
 }
 ```
 
-4. Implement EntityResolverInterface
+5. Implement EntityResolverInterface
 
 Once the `_entities` query is called the `Entity` union will be resolved. The Apollo Gateway server will send queries like
 
