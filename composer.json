@@ -6,8 +6,8 @@
         "bin-dir": "bin"
     },
     "require": {
-        "neos/flow": "~4.3 || ~5.0",
-        "t3n/graphql-tools": "~1.0.2",
+        "neos/flow": "*",
+        "t3n/graphql-tools": "*",
         "php": ">=7.2"
     },
     "require-dev": {
