@@ -1,3 +1,6 @@
+> [!WARNING]
+> **This plugin is no longer being maintained and there is no superseding package at this time**
+
 # t3n.GraphQL.ApolloFederation
 
 Sidecar package for [t3n.GraphQL](https://github.com/t3n/graphql) to implement the [Apollo Federation specification](https://www.apollographql.com/docs/apollo-server/federation/federation-spec/) within your GraphQL schema.
