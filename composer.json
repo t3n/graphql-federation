@@ -1,4 +1,5 @@
 {
+    "abandoned": true,
     "description": "Apollo Federation spec implementation for t3n.GraphQL",
     "type": "neos-package",
     "name": "t3n/graphql-apollofederation",
